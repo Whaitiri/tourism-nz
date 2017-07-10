@@ -1,0 +1,22 @@
+@mixin mediaMobile {
+	@media (max-width: #{$pageMobileWidth}) {
+		@content;
+	}
+}
+
+@mixin mediaTablet {
+	@media (min-width: #{$pageTabletWidth}) and (max-width: #{$pageFullWidth}) {
+		@content;
+	}
+}
+
+@mixin mediaDesktop {
+	@media (min-width: #{$pageFullWidth}) {
+		@content;
+	}
+}
+
+
+
+
+
