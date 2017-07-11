@@ -1,3 +1,10 @@
 $(document).ready(function(){
-   // do jQuery
+   
 })
+
+window.onload = function() {
+	document.querySelector('.slideoutBtn').addEventListener('click', function() {
+		slideout.toggle();
+	});
+}
+

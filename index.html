@@ -11,34 +11,37 @@
 </head>
 <body>
 
-<div id="masterContainer">
-
-
-
-
-
-<!-- 	<header id="headerContainer">
-
-		<nav>
-		
+	<div id="masterContainer">
+		<nav id="menu">
+			<header>
+				<h2>HERE ARE THE OPTIONS</h2>
+			</header>
 		</nav>
 
-	</header>
+		<main id="panel">
+			<div id="mapContainer"></div>
+		</main>
 
-	<div id="pageContainer">
+			
 
 	</div>
 
-	
-	<footer id="footerContainer">
-		
-	</footer> -->
-
-</div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnSRJkewDUjCSYI3GMMZ_6ctTUGNt3Zos"></script>
+<script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script src="js/slideout.min.js"></script>
+<script>
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 300,
+    'tolerance': 70
+  });
+</script>
+
+
+
 
 </body>
 </html>
