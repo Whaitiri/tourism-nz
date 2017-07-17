@@ -64,6 +64,6 @@ p {
   width: device-width;
   height: 100vh; }
 
-#mapContainer {
+#map_canvas {
   width: device-width;
   height: 100vh; }

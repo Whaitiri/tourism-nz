@@ -1,15 +1,69 @@
 var nzLoc = {lat: -40.9006, lng: 174.8860 };
-var mapMain;
+var map;
+var directionsDisplay, directionsService;
+var countryRestrict = {'country': 'nz'};
 
 function initMap() {
-	mapMain = new google.maps.Map(document.getElementById('mapContainer'), {
+	directionsService = new google.maps.DirectionsService;
+	directionsDisplay = new google.maps.DirectionsRenderer;
+	map = new google.maps.Map(document.getElementById('map_canvas'), {
 		zoom: 6,
 		center: nzLoc
 	});
-	var marker = new google.maps.Marker({
-		position: nzLoc,
-		map: mapMain
+	// var marker = new google.maps.Marker({
+	// 	position: nzLoc,
+	// 	map: mapMain
+	// });
+	directionsDisplay.setMap(map);
+	var onChangeHandler = function() {
+		calculateDirections(directionsService, directionsDisplay)
+	};
+
+	var startAutocomplete = new google.maps.places.Autocomplete((
+		document.getElementById('startLocation')), {
+		types: ['(cities)'],
+		componentRestrictions: countryRestrict
+	});
+
+	var endAutocomplete = new google.maps.places.Autocomplete((
+		document.getElementById('endLocation')), {
+		types: ['(cities)'],
+		componentRestrictions: countryRestrict
+	});
+	document.getElementById('startLocation').addEventListener('change', onChangeHandler);
+	document.getElementById('endLocation').addEventListener('change', onChangeHandler);
+}
+
+function calculateDirections(directionsService, directionsDisplay) {
+	var request = {
+		origin: document.getElementById('startLocation').value,
+		destination: document.getElementById('endLocation').value,
+		travelMode: 'DRIVING'
+	}
+	if (document.getElementById('startLocation').value === document.getElementById('endLocation').value) {
+		window.alert('Please dont use the same location twice');
+		return;
+	}
+	directionsService.route(request, function(response, status) {
+		if (status === 'OK') {
+			directionsDisplay.setDirections(response);
+		} else {
+			// window.alert('Directions request failed due to ' + status);
+		}
 	});
 }
 
-initMap();
+// {
+//   origin: LatLng | String | google.maps.Place,
+//   destination: LatLng | String | google.maps.Place,
+//   travelMode: TravelMode,
+//   transitOptions: TransitOptions,
+//   drivingOptions: DrivingOptions,
+//   unitSystem: UnitSystem,
+//   waypoints[]: DirectionsWaypoint,
+//   optimizeWaypoints: Boolean,
+//   provideRouteAlternatives: Boolean,
+//   avoidHighways: Boolean,
+//   avoidTolls: Boolean,
+//   region: String
+// }

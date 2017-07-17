@@ -15,6 +15,15 @@
 		<nav id="menu">
 			<header>
 				<h2>HERE ARE THE OPTIONS</h2>
+				<h3>Start point</h3>
+				<div id="startlocationField">
+					<input id="startLocation" placeholder="Enter a city" type="text" />
+				</div>
+				
+				<h3>Destination</h3>
+				<div id="endLocationField">
+					<input id="endLocation" placeholder="Enter a city" type="text" />
+				</div>
 			</header>
 		</nav>
 
@@ -24,7 +33,7 @@
 				<p>---</p>
 				<p>---</p>
 			</a>
-			<div id="mapContainer"></div>
+			<div id="map_canvas"></div>
 		</main>
 
 			
@@ -32,7 +41,7 @@
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnSRJkewDUjCSYI3GMMZ_6ctTUGNt3Zos"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnSRJkewDUjCSYI3GMMZ_6ctTUGNt3Zos&callback=initMap&libraries=geometry,places"></script>
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script src="js/slideout.min.js"></script>
