@@ -22,7 +22,12 @@ p {
 	height: 100vh;
 }
 
-#map_canvas {
-	width: device-width;
+#mapCanvas {
+	width: 100%;
 	height: 100vh;
+}
+
+#menuContainer {
+	width: 300px;
+	margin: 0 auto;
 }

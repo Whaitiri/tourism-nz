@@ -12,18 +12,15 @@
 <body>
 
 	<div id="masterContainer">
-		<nav id="menu">
-			<header>
+		<nav id="menu">		
+			<header id="menuContainer">
 				<h2>HERE ARE THE OPTIONS</h2>
 				<h3>Start point</h3>
-				<div id="startlocationField">
 					<input id="startLocation" placeholder="Enter a city" type="text" />
-				</div>
+
 				
 				<h3>Destination</h3>
-				<div id="endLocationField">
 					<input id="endLocation" placeholder="Enter a city" type="text" />
-				</div>
 			</header>
 		</nav>
 
@@ -33,7 +30,7 @@
 				<p>---</p>
 				<p>---</p>
 			</a>
-			<div id="map_canvas"></div>
+			<div id="mapCanvas"></div>
 		</main>
 
 			
@@ -43,15 +40,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnSRJkewDUjCSYI3GMMZ_6ctTUGNt3Zos&callback=initMap&libraries=geometry,places"></script>
 <script type="text/javascript" src="js/map.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script async defer type="text/javascript" src="js/script.js"></script>
 <script src="js/slideout.min.js"></script>
-<script>
-  var slideout = new Slideout({
-	'panel': document.getElementById('panel'),
-	'menu': document.getElementById('menu'),
-	'padding': 300,
-	'tolerance': 70
-  });
+<script> 
+	var slideout = new Slideout({
+		'panel': document.getElementById("panel"),
+		'menu': document.getElementById("menu"),
+		'padding': 1,
+		'tolerance': 70,
+		'duration': 1,
+	});
 </script>
 
 

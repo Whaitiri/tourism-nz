@@ -4,21 +4,25 @@ var directionsDisplay, directionsService;
 var countryRestrict = {'country': 'nz'};
 
 function initMap() {
-	directionsService = new google.maps.DirectionsService;
-	directionsDisplay = new google.maps.DirectionsRenderer;
-	map = new google.maps.Map(document.getElementById('map_canvas'), {
+	//initializing map settings and html render location
+	map = new google.maps.Map(document.getElementById('mapCanvas'), {
 		zoom: 6,
 		center: nzLoc
 	});
-	// var marker = new google.maps.Marker({
-	// 	position: nzLoc,
-	// 	map: mapMain
-	// });
+	
+	//initializing directions service
+	directionsService = new google.maps.DirectionsService;
+	directionsDisplay = new google.maps.DirectionsRenderer;
 	directionsDisplay.setMap(map);
+
 	var onChangeHandler = function() {
 		calculateDirections(directionsService, directionsDisplay)
 	};
 
+	document.getElementById('startLocation').addEventListener('change', onChangeHandler);
+	document.getElementById('endLocation').addEventListener('change', onChangeHandler);
+
+	//autocomplete boxes for start and end points
 	var startAutocomplete = new google.maps.places.Autocomplete((
 		document.getElementById('startLocation')), {
 		types: ['(cities)'],
@@ -30,10 +34,9 @@ function initMap() {
 		types: ['(cities)'],
 		componentRestrictions: countryRestrict
 	});
-	document.getElementById('startLocation').addEventListener('change', onChangeHandler);
-	document.getElementById('endLocation').addEventListener('change', onChangeHandler);
 }
 
+//calculation directions from start to end point
 function calculateDirections(directionsService, directionsDisplay) {
 	var request = {
 		origin: document.getElementById('startLocation').value,
@@ -52,18 +55,3 @@ function calculateDirections(directionsService, directionsDisplay) {
 		}
 	});
 }
-
-// {
-//   origin: LatLng | String | google.maps.Place,
-//   destination: LatLng | String | google.maps.Place,
-//   travelMode: TravelMode,
-//   transitOptions: TransitOptions,
-//   drivingOptions: DrivingOptions,
-//   unitSystem: UnitSystem,
-//   waypoints[]: DirectionsWaypoint,
-//   optimizeWaypoints: Boolean,
-//   provideRouteAlternatives: Boolean,
-//   avoidHighways: Boolean,
-//   avoidTolls: Boolean,
-//   region: String
-// }

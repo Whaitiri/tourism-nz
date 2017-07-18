@@ -1,17 +1,25 @@
 .slideout-menu {
 	position: fixed;
-	top: 0;
+	top: 100px;
 	bottom: 0;
-	width: 256px;
-	min-height: 100vh;
+	width: 1px;
+	height: 30%;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
-	z-index: 0;
-	display: none;
+	z-index: 1;
+	display: block;
+	visibility: hidden;
+   transition: all 400ms ease;
+   transition-delay: 0s;
+	background-color: rgba(255,255,255,1);
+}
+
+#menu {
 }
 
 .slideout-menu-left {
 	left: 0;
+
 }
 
 .slideout-menu-right {
@@ -19,23 +27,24 @@
 }
 
 .slideout-panel {
-	position: relative;
-	z-index: 1;
+	position: fixed;
 	will-change: transform;
 	background-color: #FFF; /* A background-color is required */
-	min-height: 100vh;
-}
+	height: 100vh;
+	width: 1200px;
+	}
 
-.slideout-open,
+.slideout-open, .slideout-menu,
 .slideout-open body,
 .slideout-open .slideout-panel {
 	overflow: hidden;
 }
 
 .slideout-open .slideout-menu {
+	width: 300px;
+	visibility: visible;
 	display: block;
 }
-
 //my styles
 .slideoutbtn {
 	position: absolute;
@@ -43,7 +52,7 @@
 	display: inline-block; 
 	background: white; color: black;
 	border: 1px solid black;
-	z-index: 1; top: 5px; left: 5px;
+	z-index: 1; top: 105px; left: 5px;
 	padding-right: 13px; padding-bottom: 9px; padding-left: 5px;
 	line-height: 10px; font-size: 3em; letter-spacing: -7px;
 } 
