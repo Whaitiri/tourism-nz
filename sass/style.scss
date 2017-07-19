@@ -9,12 +9,14 @@
 	text-decoration: none;
 }
 
-h1 {
+h1,h2,h3,h4,h5,h6 {
 	font-family: $headerFont;
 }
 
-p {
+p,a {
 	font-family: $bodyFont;
+	font-size: 0.9em;
+	color: black;
 }
 
 #masterContainer {
@@ -28,6 +30,70 @@ p {
 }
 
 #menuContainer {
-	width: 300px;
+	width: 250px;
 	margin: 0 auto;
+}
+
+#locationContainer {
+	margin-top: 5px;
+	width: 98%;
+}
+
+#locationSubmit, #calculatorSubmit {
+	padding: 4px;
+	border: 1px solid grey;
+	background-color: #EEE;
+	text-decoration: none;
+	line-height: 30px;
+}
+
+#transportContainer {
+	overflow: hidden;
+}
+
+#infoContainer {
+	font-size: 2.5em;
+	font-weight: bold;
+	position: absolute;
+	bottom: 20px;
+	right: 10px;
+	z-index: 1;
+}
+
+#logoContainer {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1;
+}
+
+#vehicleInput {
+	margin: 5px;
+}
+
+.peopleInput, .daysInput {
+	width: 50px;
+	margin: 5px;
+	display: inline-block;
+}
+
+.peopleOutput, .daysOutput {
+	margin-right: 100px;
+	margin-top: 5px;	
+}
+
+.costOutput {
+	margin-right: 10px;
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 26px;
+}
+
+.costInfoOutput {
+	margin-top: 6px;
+	margin-right: 10px;
+}
+
+.floatRight {
+	float: right;
 }

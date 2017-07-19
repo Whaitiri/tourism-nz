@@ -14,13 +14,32 @@
 	<div id="masterContainer">
 		<nav id="menu">		
 			<header id="menuContainer">
-				<h2>HERE ARE THE OPTIONS</h2>
-				<h3>Start point</h3>
-					<input id="startLocation" placeholder="Enter a city" type="text" />
-
-				
-				<h3>Destination</h3>
-					<input id="endLocation" placeholder="Enter a city" type="text" />
+				<div id="locationContainer">
+					<h3>Start point</h3>
+					<input id="startLocation" class="locationInput" placeholder="Enter a city" type="text" />
+					<h3>Destination</h3>
+					<input id="endLocation" class="locationInput" placeholder="Enter a city" type="text" />
+					<a id="locationSubmit" href="#">Submit</a>
+					<p id="validationOutput">&#160</p>
+				</div>
+				<div id="transportContainer">
+					<h2>Vehicle Selector</h2>
+					<p class="costInfoOutput floatRight">&#160<br>&#160</p>
+					<form id="vehicleInput"><p>
+						<input type="radio" name="vehicle" value="motorcycle">Motorcycle<br>
+						<input type="radio" name="vehicle" value="car">Car<br>
+						<input type="radio" name="vehicle" value="van">Van<br>
+						<input type="radio" name="vehicle" value="motorHome">Motor Home
+					</p></form><br>
+					<h2>Number of People</h2>
+					<input class="peopleInput" type="number" disabled="disabled" scrollWidth="30" max="4"/><p class="peopleOutput floatRight"> </p>
+					<h2>Number of Days</h2>
+					<input class="daysInput" type="number" disabled="disabled" scrollWidth="30" max="4"/><p class="daysOutput floatRight"> </p>
+					<p class="costOutput floatRight">&#160<br>&#160<br>&#160</p><br><br>
+					<a id="calculatorSubmit" href="#">Submit</a>
+					
+	
+				</div>
 			</header>
 		</nav>
 
@@ -30,7 +49,12 @@
 				<p>---</p>
 				<p>---</p>
 			</a>
+			<div id="logoContainer"><img src="logo.png"></div>
 			<div id="mapCanvas"></div>
+			<div id="infoContainer">
+				<p id="distanceOutput">&#160</p>
+				<p id="durationOutput">&#160</p>
+			</div>
 		</main>
 
 			
@@ -38,10 +62,12 @@
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnSRJkewDUjCSYI3GMMZ_6ctTUGNt3Zos&callback=initMap&libraries=geometry,places"></script>
 <script type="text/javascript" src="js/map.js"></script>
-<script async defer type="text/javascript" src="js/script.js"></script>
 <script src="js/slideout.min.js"></script>
+<script async defer type="text/javascript" src="js/script.js"></script>
+
 <script> 
 	var slideout = new Slideout({
 		'panel': document.getElementById("panel"),

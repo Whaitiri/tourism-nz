@@ -3,18 +3,19 @@
 	top: 100px;
 	bottom: 0;
 	width: 1px;
-	height: 30%;
+	height: 18%;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	z-index: 1;
 	display: block;
 	visibility: hidden;
-   transition: all 400ms ease;
-   transition-delay: 0s;
-	background-color: rgba(255,255,255,1);
+   	transition: all 400ms ease;
+   	transition-delay: 0s;
+	background-color: rgba(250,250,250,1);
 }
 
 #menu {
+
 }
 
 .slideout-menu-left {
@@ -27,12 +28,11 @@
 }
 
 .slideout-panel {
-	position: fixed;
 	will-change: transform;
-	background-color: #FFF; /* A background-color is required */
+	background-color: #EEE; /* A background-color is required */
 	height: 100vh;
-	width: 1200px;
-	}
+	width: device-width;
+}
 
 .slideout-open, .slideout-menu,
 .slideout-open body,
@@ -41,18 +41,19 @@
 }
 
 .slideout-open .slideout-menu {
-	width: 300px;
+	width: 250px;
 	visibility: visible;
 	display: block;
+	padding-left: 5px;
+	border-radius: 3px;
 }
 //my styles
 .slideoutbtn {
 	position: absolute;
 	text-decoration: none;
 	display: inline-block; 
-	background: white; color: black;
-	border: 1px solid black;
-	z-index: 1; top: 105px; left: 5px;
+	background-color: rgba(250,250,250,1); color: black;
+	z-index: 1; top: 100px;
 	padding-right: 13px; padding-bottom: 9px; padding-left: 5px;
 	line-height: 10px; font-size: 3em; letter-spacing: -7px;
 } 

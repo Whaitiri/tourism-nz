@@ -3,7 +3,7 @@
   top: 100px;
   bottom: 0;
   width: 1px;
-  height: 30%;
+  height: 18%;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 1;
@@ -11,7 +11,7 @@
   visibility: hidden;
   transition: all 400ms ease;
   transition-delay: 0s;
-  background-color: white; }
+  background-color: #fafafa; }
 
 .slideout-menu-left {
   left: 0; }
@@ -20,12 +20,11 @@
   right: 0; }
 
 .slideout-panel {
-  position: fixed;
   will-change: transform;
-  background-color: #FFF;
+  background-color: #EEE;
   /* A background-color is required */
   height: 100vh;
-  width: 1200px; }
+  width: device-width; }
 
 .slideout-open, .slideout-menu,
 .slideout-open body,
@@ -33,20 +32,20 @@
   overflow: hidden; }
 
 .slideout-open .slideout-menu {
-  width: 300px;
+  width: 250px;
   visibility: visible;
-  display: block; }
+  display: block;
+  padding-left: 5px;
+  border-radius: 3px; }
 
 .slideoutbtn {
   position: absolute;
   text-decoration: none;
   display: inline-block;
-  background: white;
+  background-color: #fafafa;
   color: black;
-  border: 1px solid black;
   z-index: 1;
-  top: 105px;
-  left: 5px;
+  top: 100px;
   padding-right: 13px;
   padding-bottom: 9px;
   padding-left: 5px;
@@ -60,11 +59,13 @@
   list-style-type: none;
   text-decoration: none; }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", sans-serif; }
 
-p {
-  font-family: "Open Sans", sans-serif; }
+p, a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  color: black; }
 
 #masterContainer {
   width: device-width;
@@ -75,5 +76,58 @@ p {
   height: 100vh; }
 
 #menuContainer {
-  width: 300px;
+  width: 250px;
   margin: 0 auto; }
+
+#locationContainer {
+  margin-top: 5px;
+  width: 98%; }
+
+#locationSubmit, #calculatorSubmit {
+  padding: 4px;
+  border: 1px solid grey;
+  background-color: #EEE;
+  text-decoration: none;
+  line-height: 30px; }
+
+#transportContainer {
+  overflow: hidden; }
+
+#infoContainer {
+  font-size: 2.5em;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  z-index: 1; }
+
+#logoContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1; }
+
+#vehicleInput {
+  margin: 5px; }
+
+.peopleInput, .daysInput {
+  width: 50px;
+  margin: 5px;
+  display: inline-block; }
+
+.peopleOutput, .daysOutput {
+  margin-right: 100px;
+  margin-top: 5px; }
+
+.costOutput {
+  margin-right: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 26px; }
+
+.costInfoOutput {
+  margin-top: 6px;
+  margin-right: 10px; }
+
+.floatRight {
+  float: right; }
